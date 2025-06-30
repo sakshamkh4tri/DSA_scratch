@@ -1,1 +1,3 @@
 # DSA_scratch
+This repo will include everything that i learned in dsa 
+stay tuned...
