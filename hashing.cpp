@@ -73,60 +73,35 @@ how many times 4
 
 // for character hashing
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-// int n;
-// cout<<"Enter the length of the string ";
-// cin>>n;
-// string st ; // inputing string
-// cout<<"Enter the string ";
-// cin>>st;
-// string cleaned="";     // string is cleaned and all char are converted to lowercase
-// for(int i=0; i<st.size(); i++){
-//     char ch= st[i];
-//     if(isalnum(ch)){
-//         cleaned+=tolower(ch);
-//     }
-// }
-// int hash[26]={0};   // creates a hash array of index 0 to 25
-// for(int i=0; i<n; i++){     // iterates from start to end of cleaned string
-//     hash[cleaned[i]-'a']+=1;   // takes a char from cleaned string and increases the value of that correspond index in hash array
-// }
-// int querries;
-// cout<<"Enter the num of querries ";
-// cin>>querries;
-
-// for(int i=0; i<querries ; i++){
-//     char c ;
-//     cin>>c;
-//     cout<<hash[c-'a']<<endl;        // outputs the value of correspond index from hash array
-// }
-// return 0;
-// }
-
 #include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    int n;
-    cin>>n;
-    int num[n];
-    for(int i=0; i<n; i++){
-        cin>>num[i];
+int n;
+cout<<"Enter the length of the string ";
+cin>>n;
+string st ; // inputing string
+cout<<"Enter the string ";
+cin>>st;
+string cleaned="";     // string is cleaned and all char are converted to lowercase
+for(int i=0; i<st.size(); i++){
+    char ch= st[i];
+    if(isalnum(ch)){
+        cleaned+=tolower(ch);
     }
-   map<int,int>mpp;
-   for(int i=0; i<n; i++){
-    mpp[num[i]]++;
-   }
+}
+int hash[26]={0};   // creates a hash array of index 0 to 25
+for(int i=0; i<n; i++){     // iterates from start to end of cleaned string
+    hash[cleaned[i]-'a']+=1;   // takes a char from cleaned string and increases the value of that correspond index in hash array
+}
+int querries;
+cout<<"Enter the num of querries ";
+cin>>querries;
 
-   for(auto it : mpp){
-    cout<<"["<<it.first<<","<<it.second<<"]"<<"";
-   }
-
-   
-
+for(int i=0; i<querries ; i++){
+    char c ;
+    cin>>c;
+    cout<<hash[c-'a']<<endl;        // outputs the value of correspond index from hash array
+}
 return 0;
 }
